@@ -64,12 +64,9 @@ def getData(client, c):
 class SshConfig:
     user = 'server'
     host = '192.168.0.3'
-    port = 254
-    password = '********' # Enter password here.
+    port = 254  # typically 22, but personal ssh server setup differently.
+    password = '********' # Enter password here, or on command line.
     cwd = os.getcwd()
-    rwd = 'Desktop'
-    keyname = 'rsakey'
-    batch_name = 'batch_script'
     remote_script = 'remote_script.sh'
     remote_script_path = f'{cwd}/{remote_script}'
     remote_script_dest = f'/home/{user}/Desktop'
