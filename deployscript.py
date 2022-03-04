@@ -60,7 +60,6 @@ def getData(client, c):
     # Transfer data to local machine
     sftp.get(f'{c.remote_script_dest}/{c.remote_data}', f'{c.cwd}/{c.remote_data}')
 
-
 # Configuration class holding
 class SshConfig:
     user = 'server'
@@ -101,7 +100,6 @@ if __name__ == '__main__':
                 config.port,
                 config.user,
                 config.password,)
-
 
     # Required steps
     sendScript(ssh, config)
