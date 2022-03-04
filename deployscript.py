@@ -82,20 +82,17 @@ if __name__ == '__main__':
     # Class for connection attributes
     config = SshConfig
 
-    # If Command Line args included
+    # If Command Line args included, update config.
     if sys.argv[1]:
+        # User
         config.user = sys.argv[1]
-
-    if sys.argv[2]:
+        # Host
         config.host = sys.argv[2]
-
-    if sys.argv[3]:
+        # Port
         config.port = sys.argv[3]
-
-    if sys.argv[4]:
+        # Password
         config.password = sys.argv[4]
-
-    if sys.argv[5]:
+        # Script to deploy
         config.script = sys.argv[5]
 
     # SSH client
