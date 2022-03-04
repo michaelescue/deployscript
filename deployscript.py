@@ -16,13 +16,12 @@
 # Brief:
 #   Creates ssh connection with remote, transfers shell script to execute,
 #   executes script through ssh, transfers data from remote. Data is
-#   Free memory from remote machine tagged with date and time info
+#   free memory from remote machine tagged with date and time info
 #   down to nano-seconds.
 
 # Required modules
 import os
 import sys
-
 import paramiko
 
 def sendScript(client, c):
