@@ -33,7 +33,7 @@ def sendScript(client, c):
     sftp = client.open_sftp()
 
     # Send script file
-    sftp.put(c.remote_script_path, f'{c.remote_script_dest}/{c.remote_script}')
+    sftp.put(c.remote_script_path, f'{c.remote_script_dest}/{c.remote_script}', callback=progress)
     sftp.close()
 
 def runScript(client, c):
@@ -67,6 +67,9 @@ def response(stdout,stderr):
     line = ''.join(stderr.readlines())
     if line:
         print(line)
+
+def progress(bytes_transferred, bytes_total):
+    print("%d of %d bytes transferred.\n" % ( bytes_transferred, bytes_total))
 
 # Configuration class holding
 class SshConfig:
